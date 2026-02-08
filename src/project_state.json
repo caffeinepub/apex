@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "New project",
+  "architectural_notes": [
+    "Image viewer container should remain fixed at 85% of app size on all devices; images must scale proportionally to fit within the container without overflowing (handle varying aspect ratios/resolutions)."
+  ],
+  "known_issues": [
+    "Current image viewer breaks with varying image ratios/resolutions; images can overflow/off-screen and layout is inconsistent between mobile/desktop modes."
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-update-the-photo-gallery-dialog-the-app-s-only-image-viewer-so-the-viewer-container-size-is-always-85-of-the-app-viewport-on-both-mobile-and-desktop-and-does-not-change-based-on-the-displayed-image-s-dimensions",
+      "title": "Update the Photo Gallery dialog (the app’s only image viewer) so the viewer container size is always 85% of the app/viewport on both mobile and desktop, and does not change based on the displayed image’s dimensions.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-gallery-images-always-scale-proportionally-to-fit-entirely-within-the-fixed-viewer-area-no-cropping-and-never-overflow-outside-the-viewer-bounds-regardless-of-image-aspect-ratio-or-resolution",
+      "title": "Ensure gallery images always scale proportionally to fit entirely within the fixed viewer area (no cropping) and never overflow outside the viewer bounds, regardless of image aspect ratio or resolution.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Fix the app's single image viewer to keep a constant viewer size (85% of app size) across mobile/desktop and scale images proportionally to fit inside without overflow, regardless of image aspect ratio/resolution.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Fix Photo Gallery image viewer to constant 85% size with proportional image fit",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "PhotoGallery viewer fixed 85% viewport size with proportional image contain",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Make the PhotoGallery dialog container a constant 85% of the viewport on all devices, independent of image dimensions, with stable internal layout/overflow.",
+      "acceptanceCriteria": [
+        "When opening the Photo Gallery, the dialog content renders at 85% of the viewport width and 85% of the viewport height on both mobile and desktop.",
+        "Viewer size remains constant while navigating between images of different aspect ratios/resolutions (no layout jumps tied to image dimensions).",
+        "No part of the viewer (including header/footer) is pushed off-screen due to image dimensions; internal scrolling/overflow is controlled within the viewer as needed."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/PhotoGallery.tsx",
+          "operation": "modify",
+          "description": "Update the shadcn-ui DialogContent sizing from the current vw/vh values to a fixed w-[85vw] and h-[85vh] (and keep max-w-none), ensuring the viewer container never resizes based on the displayed image. Ensure the internal flex layout cannot overflow (e.g., use min-h-0 on the flex content area so header/footer remain visible and overflow is contained within the viewer). Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Ensure gallery images always fit proportionally within the fixed viewer area (contain), with no cropping or overflow across aspect ratios and resolutions.",
+      "acceptanceCriteria": [
+        "Very wide (panorama) and very tall (portrait) images remain fully visible within the viewer area.",
+        "Images maintain aspect ratio and are displayed using a contain-style fit (no stretching).",
+        "Images never extend beyond the viewer bounds on any screen size; no horizontal scrolling is required to see the full image."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/PhotoGallery.tsx",
+          "operation": "modify",
+          "description": "Adjust the carousel slide/image layout so each slide provides a stable bounded box for the image (e.g., ensure CarouselItem and its inner wrapper fill available height/width and are overflow-hidden). Keep the <img> in proportional contain mode (object-contain) with max-w/max-h constraints so it never overflows and never crops, regardless of aspect ratio. Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

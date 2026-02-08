@@ -1,0 +1,16 @@
+{
+  "frontend/src/App.tsx": "Main application component that orchestrates the Habit Tier List app with category filtering, habit list display, add/edit dialogs, and photo gallery functionality.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including habit CRUD with isCritical field support (replacing isPrime), photo gallery management with v3 response handling, and header title persistence with get/update functionality.",
+  "frontend/src/components/Header.tsx": "Application header with an editable title that transforms into an inline text input when clicked, with the title text centered horizontally for all screen sizes and persisted to the backend on blur or Enter key press.",
+  "frontend/src/components/CategoryToggle.tsx": "Segmented control toggle for switching between Performance and Aesthetics categories.",
+  "frontend/src/components/HabitList.tsx": "Container component that fetches and displays the list of habits for the selected category with loading states.",
+  "frontend/src/components/HabitCard.tsx": "Collapsible habit card showing rank, tier badge or Critical infinity symbol, score, and expandable details with Critical habits visually distinguished by metallic blue slate gradient background, neon cyan infinity marker, and glowing cyan border.",
+  "frontend/src/components/AddHabitButton.tsx": "Floating action button positioned at bottom-right for adding new habits.",
+  "frontend/src/components/AddHabitDialog.tsx": "Modal dialog form for creating new habits with sliders for ratings, Critical status toggle that enforces the 7-Critical-per-category limit, and real-time total score calculation.",
+  "frontend/src/components/EditHabitDialog.tsx": "Modal dialog form for editing existing habits with pre-populated values, Critical status toggle that respects the 7-Critical-per-category limit, and real-time score updates.",
+  "frontend/src/components/DeleteHabitDialog.tsx": "Alert dialog for confirming habit deletion with loading state.",
+  "frontend/src/components/Footer.tsx": "Application footer with attribution and caffeine.ai link.",
+  "frontend/src/index.css": "Global styles with dark slate theme using OKLCH colors, tier-specific colors (Emerald/Amber/Rose), Critical habit cyan accent colors, and custom tier badge/border/Critical gradient utilities.",
+  "frontend/src/components/GalleryButton.tsx": "Floating action button with eye icon positioned above the Add Habit button for opening the photo gallery.",
+  "frontend/src/components/PhotoGallery.tsx": "Swipeable photo gallery dialog with carousel navigation, featuring a fixed 85vw × 85vh viewer size on all devices, ultra-slim top bar with add/delete icons, tap-outside-to-close functionality, and images that scale proportionally to fit within the viewer using object-contain without overflow or cropping."
+}

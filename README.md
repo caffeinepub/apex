@@ -1,2 +1,3 @@
-# apex
-Exported from Caffeine project: Fix Photo Gallery image viewer to constant 85% size with proportional image fit
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

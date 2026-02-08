@@ -1,0 +1,43 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-photo-gallery-dialog-the-app-s-only-image-viewer-so-the-viewer-container-size-is-always-85-of-the-app-viewport-on-both-mobile-and-desktop-and-does-not-change-based-on-the-displayed-image-s-dimensions",
+      "featureTitle": "Update the Photo Gallery dialog (the app’s only image viewer) so the viewer container size is always 85% of the app/viewport on both mobile and desktop, and does not change based on the displayed image’s dimensions.",
+      "files": [
+        "frontend/src/components/PhotoGallery.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-gallery-images-always-scale-proportionally-to-fit-entirely-within-the-fixed-viewer-area-no-cropping-and-never-overflow-outside-the-viewer-bounds-regardless-of-image-aspect-ratio-or-resolution",
+      "featureTitle": "Ensure gallery images always scale proportionally to fit entirely within the fixed viewer area (no cropping) and never overflow outside the viewer bounds, regardless of image aspect ratio or resolution.",
+      "files": [
+        "frontend/src/components/PhotoGallery.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "kind": "build_request",
+  "title": "Fix Photo Gallery image viewer to constant 85% size with proportional image fit",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Update the Photo Gallery dialog (the app’s only image viewer) so the viewer container size is always 85% of the app/viewport on both mobile and desktop, and does not change based on the displayed image’s dimensions.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-1"
+        ],
+        "quotes": [
+          "You can make the window 85% of the app size and fit the images accordingly... The viewer should just always be 85% of the app size whether its desktop or mobile app",
+          "viewer size stays constant, images are scaled to fit it"
+        ]
+      },
+      "acceptanceCriteria": [
+        "When opening the Photo Gallery, the dialog content renders at 85% of the viewport width and 85% of the viewport height on both mobile and desktop.",
+        "Viewer size remains constant while navigating between images of different aspect ratios/resolutions (no layout jumps tied to image dimensions).",
+        "No part of the viewer (including header/footer) is pushed off-screen due to image dimensions; internal scrolling/overflow is controlled within the viewer as needed."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Ensure gallery images always scale proportionally to fit entirely within the fixed viewer area (no cropping) and never overflow outside the viewer bounds, regardless of image aspect ratio or resolution.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-1"
+        ],
+        "quotes": [
+          "images are scaled up proportional, width and height change by the same percentages",
+          "images are scaled to fit it"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Very wide (panorama) and very tall (portrait) images remain fully visible within the viewer area.",
+        "Images maintain aspect ratio and are displayed using a contain-style fit (no stretching).",
+        "Images never extend beyond the viewer bounds on any screen size; no horizontal scrolling is required to see the full image."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit any files under frontend/src/components/ui (these are read-only/immutable).",
+    "Keep changes limited to the existing single image feature (PhotoGallery) and its styling/layout; do not introduce new gallery features."
+  ],
+  "nonGoals": [
+    "Adding zoom, pan, pinch-to-zoom, or cropping controls.",
+    "Changing backend gallery storage or upload behavior.",
+    "Introducing additional image viewer components beyond the existing PhotoGallery dialog."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

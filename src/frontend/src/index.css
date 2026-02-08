@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.625rem;
+        --background: 0.145 0 0;
+        --foreground: 0.985 0 0;
+        --card: 0.205 0 0;
+        --card-foreground: 0.985 0 0;
+        --popover: 0.269 0 0;
+        --popover-foreground: 0.985 0 0;
+        --primary: 0.922 0 0;
+        --primary-foreground: 0.205 0 0;
+        --secondary: 0.269 0 0;
+        --secondary-foreground: 0.985 0 0;
+        --muted: 0.269 0 0;
+        --muted-foreground: 0.708 0 0;
+        --accent: 0.371 0 0;
+        --accent-foreground: 0.985 0 0;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.985 0 0;
+        --border: 1 0 0 / 10%;
+        --input: 1 0 0 / 15%;
+        --ring: 0.556 0 0;
+        --chart-1: 0.488 0.243 264.376;
+        --chart-2: 0.696 0.17 162.48;
+        --chart-3: 0.769 0.188 70.08;
+        --chart-4: 0.627 0.265 303.9;
+        --chart-5: 0.645 0.246 16.439;
+        --sidebar: 0.205 0 0;
+        --sidebar-foreground: 0.985 0 0;
+        --sidebar-primary: 0.488 0.243 264.376;
+        --sidebar-primary-foreground: 0.985 0 0;
+        --sidebar-accent: 0.269 0 0;
+        --sidebar-accent-foreground: 0.985 0 0;
+        --sidebar-border: 1 0 0 / 10%;
+        --sidebar-ring: 0.439 0 0;
+        
+        /* Tier colors - Emerald for S, Amber for A, Rose for B */
+        --tier-s: 0.75 0.18 160;
+        --tier-a: 0.78 0.15 85;
+        --tier-b: 0.65 0.22 15;
+        
+        /* Critical habit colors - Cyan accents */
+        --critical: 0.70 0.15 195;
+        --critical-glow: 0.70 0.15 195 / 0.4;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    }
+}
+
+@layer components {
+    /* Tier border colors */
+    .tier-s {
+        border-left: 4px solid oklch(var(--tier-s));
+    }
+    
+    .tier-a {
+        border-left: 4px solid oklch(var(--tier-a));
+    }
+    
+    .tier-b {
+        border-left: 4px solid oklch(var(--tier-b));
+    }
+    
+    /* Tier badges */
+    .tier-badge {
+        @apply px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wide;
+    }
+    
+    .tier-badge-s {
+        background-color: oklch(var(--tier-s) / 0.15);
+        color: oklch(var(--tier-s));
+    }
+    
+    .tier-badge-a {
+        background-color: oklch(var(--tier-a) / 0.15);
+        color: oklch(var(--tier-a));
+    }
+    
+    .tier-badge-b {
+        background-color: oklch(var(--tier-b) / 0.15);
+        color: oklch(var(--tier-b));
+    }
+    
+    /* Critical habit styles */
+    .critical-habit {
+        background: linear-gradient(135deg, 
+            oklch(0.205 0 0) 0%, 
+            oklch(0.25 0.08 240) 100%
+        );
+        border-left: 4px solid oklch(var(--critical));
+    }
+    
+    .border-critical {
+        border-color: oklch(var(--critical));
+    }
+    
+    .shadow-critical {
+        box-shadow: 0 0 20px oklch(var(--critical-glow));
+    }
+    
+    .text-critical {
+        color: oklch(var(--critical));
+    }
+    
+    .bg-critical\/5 {
+        background-color: oklch(var(--critical) / 0.05);
+    }
+    
+    .critical-badge {
+        @apply px-2.5 py-1 rounded-md flex items-center justify-center;
+        background-color: oklch(var(--critical) / 0.15);
+        color: oklch(var(--critical));
+    }
+}

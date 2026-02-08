@@ -1,0 +1,60 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-08T21:21:12.580Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Update the Photo Gallery dialog (the app’s only image viewer) so the viewer container size is always 85% of the app/viewport on both mobile and desktop, and does not change based on the displayed image’s dimensions.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/PhotoGallery.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/PhotoGallery.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Ensure gallery images always scale proportionally to fit entirely within the fixed viewer area (no cropping) and never overflow outside the viewer bounds, regardless of image aspect ratio or resolution.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/PhotoGallery.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/PhotoGallery.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/Dockerfile",
+    "build-template/LICENSE",
+    "build-template/README.md",
+    "build-template/deploy.sh",
+    "build-template/icp.yaml",
+    "build-template/src/backend/canister.yaml",
+    "build-template/src/frontend/canister.yaml",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/PhotoGallery.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/main.tsx",
+    "frontend/src/ui-summary.json",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
